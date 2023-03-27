@@ -1,9 +1,0 @@
-<div class="flex flex-col aspect-square max-h-fit border border-gray-800">
-  <div *ngFor="let row of board; index as rowIndex" class="flex flex-grow">
-    <div *ngFor="let cell of row; index as colIndex"
-         class="flex-grow flex items-center justify-center cursor-pointer"
-         [ngClass]="(rowIndex + colIndex) % 2 === 0 ? 'bg-light-cell' : 'bg-dark-cell'"
-         (click)="cellClicked(rowIndex, colIndex)">
-    </div>
-  </div>
-</div>
