@@ -9,21 +9,17 @@ import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        BoardComponent,
-        HeaderComponent,
-        TopPanelComponent,
-        BottomPanelComponent,
-        MainPanelComponent,
-    ],
-    imports: [
-        BrowserModule
-    ],
-    providers: [],
-    exports: [
-        BoardComponent
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    BoardComponent,
+    HeaderComponent,
+    TopPanelComponent,
+    BottomPanelComponent,
+    MainPanelComponent,
+  ],
+  imports: [BrowserModule],
+  providers: [],
+  exports: [BoardComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
