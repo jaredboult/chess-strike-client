@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-top-panel',
   templateUrl: './top-panel.component.html',
 })
-export class TopPanelComponent {
-
-}
+export class TopPanelComponent {}

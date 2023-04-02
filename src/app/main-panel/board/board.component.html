@@ -1,14 +1,12 @@
-<div
-  id="board"
-  class="flex flex-col-reverse">
-  <div
-    *ngFor="let row of board; index as rowIndex"
-    class="flex flex-grow">
+<div id="board" class="flex flex-col-reverse">
+  <div *ngFor="let row of board; index as rowIndex" class="flex flex-grow">
     <div
       *ngFor="let cell of row; index as colIndex"
       class="flex-grow flex items-center justify-center cursor-pointer"
-      [ngClass]="(rowIndex + colIndex) % 2 === 0 ? 'bg-[#1F8592]' : 'bg-[#FFDEA8]'"
-      (click)="cellClicked(rowIndex, colIndex)">
-    </div>
+      [ngClass]="
+        (rowIndex + colIndex) % 2 === 0 ? 'bg-[#1F8592]' : 'bg-[#FFDEA8]'
+      "
+      (click)="cellClicked(rowIndex, colIndex)"
+    ></div>
   </div>
 </div>

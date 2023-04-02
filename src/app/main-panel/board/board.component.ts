@@ -1,11 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-board',
-  templateUrl: './board.component.html'
+  templateUrl: './board.component.html',
 })
 export class BoardComponent implements OnInit, OnDestroy {
-  board: any[][] | undefined;
+  board: null[][] | undefined;
   sizeObserver: ResizeObserver | undefined;
 
   constructor() {
@@ -17,7 +17,7 @@ export class BoardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if(this.sizeObserver){
+    if (this.sizeObserver) {
       this.sizeObserver.disconnect();
     }
   }
@@ -38,44 +38,47 @@ export class BoardComponent implements OnInit, OnDestroy {
 
   private calculateBoardSize(): void {
     this.sizeObserver = new ResizeObserver((entries) => {
-      for (const entry of entries){
-        if(entry.contentRect){
+      for (const entry of entries) {
+        if (entry.contentRect) {
           // Top panel height calculation
-          const topPanel = document.querySelector('app-top-panel') as HTMLElement;
+          const topPanel = document.querySelector(
+            'app-top-panel'
+          ) as HTMLElement;
           let topHeight = 0;
-          if(!topPanel){
-            throw new Error("Cannot find the top-panel");
+          if (!topPanel) {
+            throw new Error('Cannot find the top-panel');
           }
           topHeight = topPanel.getBoundingClientRect().height;
 
           // Bottom panel height calculation
-          const bottomPanel = document.querySelector('app-bottom-panel') as HTMLElement;
+          const bottomPanel = document.querySelector(
+            'app-bottom-panel'
+          ) as HTMLElement;
           let bottomHeight = 0;
-          if(!bottomPanel){
-            throw new Error("Cannot find the top-panel");
+          if (!bottomPanel) {
+            throw new Error('Cannot find the top-panel');
           }
           bottomHeight = bottomPanel.getBoundingClientRect().height;
 
           // Viewport size
           const entireWidth = entry.contentRect.width;
-          const entireHeight = entry.contentRect.height
+          const entireHeight = entry.contentRect.height;
 
-          const width = entireWidth - 16 // allow for border
+          const width = entireWidth - 16; // allow for border
           const height = entireHeight - topHeight - bottomHeight;
 
           let stringValue = '';
-          if (width < height){
+          if (width < height) {
             stringValue = `${width}px`;
           } else {
             stringValue = `${height}px`;
           }
           const boardElement = document.querySelector('#board') as HTMLElement;
-          if(!boardElement){
-            throw new Error("Cannot find the board");
+          if (!boardElement) {
+            throw new Error('Cannot find the board');
           }
           boardElement.style.width = stringValue;
           boardElement.style.height = stringValue;
-          console.log("hi")
         }
       }
     });
