@@ -60,7 +60,7 @@ export class BoardComponent implements OnInit, OnDestroy {
           const entireWidth = entry.contentRect.width;
           const entireHeight = entry.contentRect.height
 
-          const width = entireWidth - 4 // allow for border
+          const width = entireWidth - 16 // allow for border
           const height = entireHeight - topHeight - bottomHeight;
 
           let stringValue = '';
