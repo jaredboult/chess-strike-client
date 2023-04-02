@@ -7,7 +7,7 @@
     <div
       *ngFor="let cell of row; index as colIndex"
       class="flex-grow flex items-center justify-center cursor-pointer"
-      [ngClass]="(rowIndex + colIndex) % 2 === 0 ? 'bg-stone-200' : 'bg-stone-600'"
+      [ngClass]="(rowIndex + colIndex) % 2 === 0 ? 'bg-[#FFDEA8]' : 'bg-[#1F8592]'"
       (click)="cellClicked(rowIndex, colIndex)">
     </div>
   </div>

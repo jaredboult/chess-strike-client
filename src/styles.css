@@ -6,6 +6,8 @@
 @layer base {
   body {
     height: 100dvh;
-    @apply bg-gradient-to-b from-slate-100 to-slate-300 dark:from-indigo-900 dark:to-slate-900;
+    background-image: url("assets/blob-bg.svg");
+    background-size: 100% 100%;
+    font-family: 'Montserrat', sans-serif;
   }
 }
